@@ -1,0 +1,44 @@
+:root {
+  --bg: #0b0b0c;
+  --card: #16161a;
+  --text: #e8e8ea;
+  --muted: #9a9aa1;
+  --accent: #ffd166;
+  --good: #84cc16;
+  --warn: #f59e0b;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial;
+  background: radial-gradient(1200px 800px at 80% -10%, #1f1f26 0%, #0b0b0c 40%) no-repeat;
+  color: var(--text);
+}
+.container { max-width: 960px; margin: 40px auto; padding: 0 20px; }
+h1 { font-weight: 800; letter-spacing: -0.02em; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+
+.controls { display: flex; gap: 12px; align-items: center; margin: 16px 0 24px; }
+button {
+  appearance: none; padding: 10px 16px; border-radius: 12px;
+  border: 1px solid #ffffff15; background: linear-gradient(180deg,#24242a,#15151a);
+  color: var(--text); font-weight: 600; cursor: pointer;
+}
+button:disabled { opacity: .5; cursor: not-allowed; }
+#status { color: var(--muted); font-size: 14px; }
+
+.card { background: var(--card); border: 1px solid #ffffff12; border-radius: 16px; padding: 18px; box-shadow: 0 10px 30px #00000055; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; }
+.metric span { display: inline-block; margin-bottom: 4px; }
+.metric.strong span { color: var(--good); }
+.metric.warn span { color: var(--warn); }
+
+.bar { width: 100%; height: 12px; border-radius: 999px; background: #ffffff12; overflow: hidden; border: 1px solid #ffffff10; }
+.bar > div { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), #f59e0b); border-right: 1px solid #ffffff40; transition: width .3s ease; }
+
+.chips { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; margin-bottom: 10px; }
+.pill { padding: 6px 10px; border-radius: 999px; border: 1px solid #ffffff20; background: #ffffff10; display: inline-flex; justify-content: space-between; gap: 8px; }
+.pill strong { font-weight: 700; }
+
+.hidden { display: none; }

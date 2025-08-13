@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Voz → Emociones (ES) · Vercel</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎙️ Voz → Emociones (ES)</h1>
+    <p class="muted">Web app lista para Vercel. Procesa <strong>en el navegador</strong> y, si configuras un token de Hugging Face, también usa modelos ML.</p>
+
+    <div class="controls">
+      <button id="startBtn">Grabar</button>
+      <button id="stopBtn" disabled>Detener</button>
+      <span id="status">Micrófono: sin grabar</span>
+    </div>
+    <audio id="playback" controls class="hidden"></audio>
+
+    <div id="results" class="card hidden">
+      <h2>Resultados locales (prosodia)</h2>
+      <div id="metrics" class="grid"></div>
+
+      <h3>Estados derivados (heurísticos)</h3>
+      <div id="derived" class="grid">
+        <div class="metric strong"><span>Seguridad</span><div class="bar"><div id="seguridadBar"></div></div><span id="seguridadVal">-</span></div>
+        <div class="metric"><span>Inseguridad</span><div class="bar"><div id="inseguridadBar"></div></div><span id="inseguridadVal">-</span></div>
+        <div class="metric warn"><span>Nerviosismo</span><div class="bar"><div id="nerviosismoBar"></div></div><span id="nerviosismoVal">-</span></div>
+      </div>
+
+      <div id="mlBlock" class="hidden">
+        <h2>Modelos ML (Hugging Face)</h2>
+        <div id="discrete" class="chips"></div>
+        <div id="dims" class="grid">
+          <div class="metric"><span>Valencia</span><div class="bar"><div id="valenciaBar"></div></div><span id="valenciaVal">-</span></div>
+          <div class="metric"><span>Arousal</span><div class="bar"><div id="arousalBar"></div></div><span id="arousalVal">-</span></div>
+          <div class="metric"><span>Dominancia</span><div class="bar"><div id="dominanceBar"></div></div><span id="dominanceVal">-</span></div>
+        </div>
+      </div>
+
+      <p class="muted small">Nota: resultados aproximados; evita usarlos para decisiones sensibles.</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

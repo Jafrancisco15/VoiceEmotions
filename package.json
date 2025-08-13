@@ -1,0 +1,9 @@
+{
+  "name": "voz-emociones-vercel",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "dependencies": {
+    "busboy": "^1.6.0"
+  }
+}
